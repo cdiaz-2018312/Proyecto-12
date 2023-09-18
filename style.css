@@ -1,0 +1,61 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(236, 236, 236, 0.7);
+}
+
+.acordeon {
+    margin: 100px auto;
+    width: 700px;
+}
+
+.acordeon li {
+    list-style: none;
+    width: 100%;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    background: #bbb;
+    box-shadow: 6px 6px 10px 5px rgb(205, 156, 245, 0.8);
+    border-style: groove; 
+}
+
+.acordeon li label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+
+label::before {
+    content: "+";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.acordeon .contenido {
+    color: darkslategrey;
+    padding: 0 10px;
+    line-height: 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s, padding 0.5s;
+    justify-content: center;
+}
+
+.acordeon input[type="radio"]:checked + label + .contenido {
+    max-height: 125px;
+    padding: 10px 10px 5px;
+}
